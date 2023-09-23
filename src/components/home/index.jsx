@@ -1,11 +1,13 @@
-import { useState } from "react";
+import DefaultLayout from "../layouts/DefaultLayout";
 
 const Home = ({ user, todos }) => {
-  
+
   return (
-    <div className='w-full h-[calc(100vh-100px)] flex justify-center items-center overflow-y-auto overflow-x-hidden '>
-      <div className='text-heading-1'>Welcome {user}</div>
-    </div>
+    <DefaultLayout showFooter={true}>
+      <div className='w-full h-[calc(100vh-100px)] flex justify-center items-center overflow-y-auto overflow-x-hidden '>
+        <div className='text-heading-1'>Welcome {user}</div>
+      </div>
+    </DefaultLayout>
   );
 };
 
