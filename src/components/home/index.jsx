@@ -1,6 +1,6 @@
 import SideBar from '../common/SideBar';
 import DefaultLayout from '../layouts/DefaultLayout';
-import ListView from '../ListView/ListView'
+import ListView from '../listview/ListView'
 const Home = () => {
 
   return (
