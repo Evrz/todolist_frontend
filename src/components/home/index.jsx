@@ -27,8 +27,8 @@ const Home = () => {
       <div className='flex h-full justify-evenly'>
         <div className='w-[10%] flex justify-around m-4 '>
           <SideBar className={'pt-6'} >
-            {sideBarItems.map((item) => (
-              <div className='cursor-pointer'
+            {sideBarItems.map((item, index) => (
+              <div key={index + "item"} className='cursor-pointer'
                 onClick={item.onClick}>
                 <Button
                   buttonType={'icon'}

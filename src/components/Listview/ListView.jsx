@@ -32,7 +32,7 @@ const ListView = ({ className }) => {
     return (
         <div className={`h-4/5 overflow-auto ${className}`}>
             {data.map((item) => (
-                <div className='flex justify-between'>
+                <div key={item.id + "item"} className='flex justify-between'>
                     <ListViewItem item={item} />
                 </div>
             ))}</div>
