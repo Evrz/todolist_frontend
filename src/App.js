@@ -1,8 +1,12 @@
+import Home from './components/home';
+import DefaultLayout from './components/layouts/DefaultLayout';
+
 function App() {
+  const user = 'Robin'
+
   return (
-    <div className="App">
-      <h1>
-        Hello World!</h1>
+    <div className="">
+      <Home />
     </div>
   )
 }
