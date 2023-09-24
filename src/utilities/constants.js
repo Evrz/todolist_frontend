@@ -53,7 +53,6 @@ const TOAST = {
   }
 };
 
-
 export {
   ABC_CONSTANTS
 };
