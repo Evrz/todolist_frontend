@@ -1,10 +1,9 @@
 import TitleBar from '../common/TitleBar';
 import SideBar from '../common/SideBar';
 import DefaultLayout from '../layouts/DefaultLayout';
-import ListView from '../listview/ListView'
 import Button from '../common/Button';
+import ListView from '../listView/ListView';
 const Home = () => {
-  // TODO: once Icon is finalised, replace with icon and also replace data with the respective
   const sideBarItems = [
     {
       id: 1,
