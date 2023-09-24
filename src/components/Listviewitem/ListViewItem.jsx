@@ -1,6 +1,4 @@
-import React from 'react'
-
-const ListViewItem = ({ item }) => {
+const ListViewItem = ({ item, className }) => {
     return (
         <div className={`flex justify-between w-full bg-white m-4 p-3 rounded-md ${item.className}`}>
             <div className='rounded-full border border-gray-400 w-16 h-16 flex items-center justify-center'>

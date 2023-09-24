@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ListViewItem from '../listViewItem/ListViewItem';
-import axios from 'axios';
+import TODO_API from '../../utilities/todos/todo.api';
 
 const ListView = ({ className }) => {
 
