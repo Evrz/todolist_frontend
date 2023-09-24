@@ -12,7 +12,7 @@ const ListView = ({ className }) => {
         <div className={`h-4/5 overflow-auto ${className}`}>
             {listItems.map((item) => (
                 <div className='flex justify-between'>
-                    <ListViewItem item={item} />
+                    <ListViewItem item={item} className={'cursor-pointer'} />
                 </div>
             ))}</div>
     )
