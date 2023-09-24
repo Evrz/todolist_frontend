@@ -1,18 +1,26 @@
-import React from 'react'
-import ListViewItem from '../Listviewitem/ListViewItem';
+import React, { useEffect, useState } from 'react'
+import ListViewItem from '../listviewitem/ListViewItem';
+import axios from 'axios';
 
 const ListView = ({ className }) => {
-    //mimic the API data with dummy data
-    let listItems = [
-        { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }, { item: "jkshjkhdhksd" }]
 
-    // TODO: REMOVE listItems ONCE API DATA IS LOADED
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        axios.get('/api/v1/todo/items')
+            .then(response => {
+                setData(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [])
 
     return (
         <div className={`h-4/5 overflow-auto ${className}`}>
-            {listItems.map((item) => (
+            {data.map((item) => (
                 <div className='flex justify-between'>
-                    <ListViewItem item={item} className={'cursor-pointer'} />
+                    <ListViewItem item={item} />
                 </div>
             ))}</div>
     )
