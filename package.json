@@ -2,11 +2,13 @@
   "name": "ecomdemo-frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "autoprefixer": "^10.4.16",
+    "axios": "^1.5.0",
     "babel-eslint": "^10.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.30",
