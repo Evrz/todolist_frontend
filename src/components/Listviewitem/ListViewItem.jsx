@@ -6,7 +6,7 @@ const ListViewItem = ({ item }) => {
             <div className='rounded-full border border-gray-400 w-16 h-16 flex items-center justify-center'>
                 <img src='/assets/icons/inProgress.png' className='' />
             </div>
-            <span>
+            <span className='flex text-heading-6 items-center'>
                 {item.title}
             </span>
             <div className=''>
