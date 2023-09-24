@@ -2,7 +2,7 @@ import React from 'react'
 import ListViewItem from '../Listviewitem/ListViewItem';
 
  const ListView = () => {
-    //mimic the API data woth dummy data
+    //mimic the API data with dummy data
     let ListItems =[{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"},{item:"jkshjkhdhksd"}]
     return (
 
