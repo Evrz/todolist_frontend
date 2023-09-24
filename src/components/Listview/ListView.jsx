@@ -3,21 +3,15 @@ import ListViewItem from '../listViewItem/ListViewItem';
 import TODO_API from '../../utilities/todos/todo.api';
 
 const ListView = ({ className }) => {
-
+    // states
     const [data, setData] = useState([]);
 
-    const API_BASE_URL = 'http://localhost:8000/api/v1/todo/items';
-
-    const todoApi = axios.create({
-        baseURL: API_BASE_URL,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-    const getAllTodos = async () => {
+    // functions
+    const fetchTodos = async () => {
         try {
-            const response = await todoApi.get('/');
+            const response = await TODO_API.getAllTodos();
             setData(response.data);
+            console.log('response.data', response.data)
             return response.data;
         } catch (error) {
             console.error('Error fetching todos:', error);
@@ -25,8 +19,9 @@ const ListView = ({ className }) => {
         }
     }
 
+    // listeners
     useEffect(() => {
-        getAllTodos();
+        fetchTodos();
     }, [])
 
     return (
