@@ -1,4 +1,3 @@
-import ListView from '../Listview/ListView';
 import DefaultLayout from '../layouts/DefaultLayout';
 
 const Home = () => {
