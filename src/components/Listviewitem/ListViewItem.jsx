@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ListViewItem = (props) => {
-    console.log(props, "asdmjk")
     return (
         <div className='flex justify-between w-full bg-white m-4 p-3 rounded-md'>
             <div className='rounded-full border border-gray-400 w-16 h-16 flex items-center justify-center'>
