@@ -8,25 +8,31 @@ const Home = () => {
   const sideBarItems = [
     {
       id: 1,
-      label: "Todos",
-      src: "assets/icons/todo"
+      label: "Todo",
+      src: "assets/icons/todo",
+      onClick: () => { console.log('clicked todo') }
     },
     {
       id: 1,
-      label: "Projects",
-      src: "assets/icons/project"
+      label: "Project",
+      src: "assets/icons/project",
+      onClick: () => { console.log('clicked projects') }
     }
   ]
+
   const handleAddTodo = () => {
     // Your button click logic here
   };
-  
+
   return (
     <DefaultLayout>
       <div className='flex h-full test justify-evenly'>
         <div className='w-[10%] flex justify-around m-4 '>
           <SideBar >
-            {sideBarItems.map((item) => (<div>{item.label}</div>))
+            {sideBarItems.map((item) => (
+              <div className='cursor-pointer'
+                onClick={item.onClick}>{item.label}
+              </div>))
             }
           </SideBar>
         </div>
