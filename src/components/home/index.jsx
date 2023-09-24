@@ -1,7 +1,7 @@
 import ListView from '../Listview/ListView';
 import DefaultLayout from '../layouts/DefaultLayout';
 
-const Home = ({ user, todos }) => {
+const Home = () => {
 
   return (
     <DefaultLayout showFooter={true}>
