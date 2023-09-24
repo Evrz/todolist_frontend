@@ -4,7 +4,6 @@ import DefaultHeader from './DefaultHeader';
 import ContentWrapper from './ContentWrapper';
 
 const DefaultLayout = ({ children, showFooter }) => {
-  console.log('showFooter', showFooter)
   const headerref = useRef();
   return (
     <div className="h-screen overflow-clip">

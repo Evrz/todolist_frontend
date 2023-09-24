@@ -5,8 +5,8 @@ function App() {
   const user = 'Robin'
 
   return (
-    <div className="App">
-      <Home user={user} />
+    <div className="">
+      <Home />
     </div>
   )
 }
