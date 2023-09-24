@@ -1,7 +1,7 @@
 import TitleBar from '../common/TitleBar';
 import SideBar from '../common/SideBar';
 import DefaultLayout from '../layouts/DefaultLayout';
-import ListView from '../ListView/ListView'
+import ListView from '../listview/ListView'
 import Button from '../common/Button';
 const Home = () => {
   // TODO: once Icon is finalised, replace with icon and also replace data with the respective
