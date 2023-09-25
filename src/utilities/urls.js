@@ -24,7 +24,7 @@ const todoUpdateUrl = (todoId) =>
   `${API_BASE_URL}/api/v1/todo/${todoId}/update`;
 
 const todoDeleteUrl = (todoId) =>
-  `${API_BASE_URL}/api/v1/todo/${todoId}/delete`;
+  `${API_BASE_URL}/api/v1/todo/items/`;
 
 const todoReadOneUrl = (userId, id) =>
   `/api/v1/todo/${userId}/todo/${id}`;

@@ -21,11 +21,21 @@ const Home = () => {
       onClick: () => { console.log('clicked todo') }
     }
   ]
+  const formElements = [
+    { label: 'Title', id: 'title', name: 'title', type: 'text' },
+    { label: 'Description', id: 'description', name: 'description', type: 'textarea' },
+    { label: 'Completed', id: 'completed', name: 'completed', type: 'checkbox' },
+    { label: 'Due Date', id: 'due_date', name: 'due_date', type: 'date' }
+  ];
+
   // states
   const [isModalOpen, setModalOpen] = useState(false);
   const [todoData, setTodoData] = useState([]);
   const formRef = useRef(null);
 
+  // functions:
+
+  // fn: modal popup and close 
   const handleAddTodo = () => {
     setModalOpen(true);
   };
@@ -34,8 +44,7 @@ const Home = () => {
     setModalOpen(false);
   };
 
-
-  // functions
+  // fn: fetch todo
   const fetchTodos = async () => {
     try {
       const response = await TODO_API.getAllTodos();
@@ -48,12 +57,14 @@ const Home = () => {
     }
   }
 
+  // fn: create-Todo 
   const addTodos = async (todoData) => {
     try {
       const response = await TODO_API.createTodo(todoData);
       console.log('response.data', response.data)
       handleCloseModal();
       fetchTodos();
+      console.log('response?.data', response?.data)
       return response.data;
     } catch (error) {
       console.error('Error creating todos:', error);
@@ -62,8 +73,8 @@ const Home = () => {
   }
 
 
+  // fn: handle Save button click on modal
   const handleSaveTodo = () => {
-    // Implement save logic here with the form data
     const formData = new FormData(formRef.current);
     const todoData = {};
     formData.forEach((value, key) => {
@@ -84,14 +95,23 @@ const Home = () => {
           <div className="fixed inset-0 backdrop-blur-2xl z-40"></div> {/* Add this backdrop */}
           <Modal onClose={handleCloseModal} onAdd={handleSaveTodo}>
             <form ref={formRef}>
-              <label htmlFor="title">Title: </label>
-              <input type="text" id="title" name="title" className='rounded-sm' /><br />
-              <label htmlFor="description">Description: </label>
-              <input type="text" id="description" name="description" className='rounded-sm' />
+              {formElements.map((element) => (
+                <div key={element.id} className='h-auto  p-2 flex justify-between'>
+                  <label htmlFor={element.id} className='flex self-start'>{element.label}: </label>
+                  {element.type === 'textarea' ? (
+                    <div className='w-[60%]'>
+                      <textarea id={element.id} name={element.name} className='rounded-sm h-auto pb-2 focus:outline-none' />
+                    </div>
+                  ) : (
+                    <div className='w-[60%]'>
+                      <input type={element.type} id={element.id} name={element.name} className='rounded-sm focus:outline-none' />
+                    </div>
+                  )}
+                </div>
+              ))}
             </form>
           </Modal>
         </>
-
       )
       }
       <div className='flex h-full justify-evenly'>
@@ -122,7 +142,7 @@ const Home = () => {
             />
           </TitleBar>
 
-          <ListView className={'px-4'} data={todoData} />
+          <ListView className={'px-4'} data={todoData} onDeleteSuccess={fetchTodos} />
         </div>
       </div>
 

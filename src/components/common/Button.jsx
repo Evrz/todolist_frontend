@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ buttonType, onClick, data, text, variant, className }) => {
+const Button = ({ buttonType, onClick, data, text, variant, className, src }) => {
     let buttonStyle = 'py-2 px-4 rounded';
 
     if (variant === 'primary') {
@@ -11,8 +11,8 @@ const Button = ({ buttonType, onClick, data, text, variant, className }) => {
 
     return (
         buttonType === 'icon' ? (
-            <div className={`flex justify-center ${data.icon.width} ${data.icon.height}`}>
-                <img src={data.icon.src} alt={data.icon.alt} />
+            <div className={`flex justify-center ${data?.icon.width} ${data?.icon.height}`}>
+                <img src={src ?? data?.icon?.src} alt={data?.icon?.alt} />
             </div>
         ) : (
             <button onClick={onClick} className={`${buttonStyle} ${className}`}>
