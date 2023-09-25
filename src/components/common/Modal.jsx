@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Modal = ({ children, onClose, onAdd }) => {
+const Modal = ({ title, children, onClose, onAdd }) => {
     return (
         <div className="flex w-full h-full fixed inset-0 items-center justify-center z-50">
             <div className="w-auto h-auto flex flex-col bg-white p-4 rounded-lg shadow-lg transform scale-105">
                 <div className='flex bg-cyan-100 w-full h-1/6 rounded-t-md justify-between px-5 '>
-                    <span className='flex items-center text-heading-6'>New</span>
+                    <span className='flex items-center text-heading-6'>{title}</span>
                     <button type="button" className="modal-close text-heading-4" onClick={onClose}>
                         <span className='text-red-500'>&times;</span>
                     </button>
