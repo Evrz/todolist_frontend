@@ -14,17 +14,24 @@ const usersDeleteUrl = (userId, id) =>
   `api/users/v1/user/${userId}`;
 
 // todo url templates
-const todoCreateUrl = userId => `/api/v1/todo/${userId}/todo`;
 const todoReadManyUrl = () =>
   `${API_BASE_URL}/api/v1/todo/items`;
+
+const todoCreateUrl = () =>
+  `${API_BASE_URL}/api/v1/todo/items`;
+
+const todoUpdateUrl = (todoId) =>
+  `${API_BASE_URL}/api/v1/todo/${todoId}/update`;
+
+const todoDeleteUrl = (todoId) =>
+  `${API_BASE_URL}/api/v1/todo/${todoId}/delete`;
+
 const todoReadOneUrl = (userId, id) =>
   `/api/v1/todo/${userId}/todo/${id}`;
-const todoUpdateUrl = (userId, id) =>
-  `/api/v1/todo/${userId}/todo/${id}`;
+
 const todoChangeStatusUrl = (userId, id) =>
   `/api/v1/todo/${userId}/todo/${id}`;
-const todoDeleteUrl = (userId, id) =>
-  `/api/v1/todo/${userId}/todo/${id}`;
+
 
 const TODO = {
   READ_MANY: todoReadManyUrl,

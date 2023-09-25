@@ -22,8 +22,42 @@ const getAllTodos = async () => {
     }
 };
 
+
+const createTodo = async (todoData) => {
+    try {
+        const response = await TODOAPI('CREATE').post('/', todoData);
+        return response;
+    } catch (error) {
+        console.error('Error creating todo:', error);
+        throw error;
+    }
+};
+
+const updateTodo = async (todoId, updatedTodoData) => {
+    try {
+        const response = await TODOAPI('UPDATE').put(`/${todoId}`, updatedTodoData);
+        return response;
+    } catch (error) {
+        console.error('Error updating todo:', error);
+        throw error;
+    }
+};
+
+const deleteTodo = async (todoId) => {
+    try {
+        const response = await TODOAPI('DELETE').delete(`/${todoId}`);
+        return response;
+    } catch (error) {
+        console.error('Error deleting todo:', error);
+        throw error;
+    }
+};
+
 const TODO_API = {
-    getAllTodos
+    getAllTodos,
+    createTodo,
+    updateTodo,
+    deleteTodo,
 };
 
 export default TODO_API;
