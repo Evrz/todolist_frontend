@@ -78,7 +78,9 @@ const Home = () => {
     const formData = new FormData(formRef.current);
     const todoData = {};
     formData.forEach((value, key) => {
-      todoData[key] = value;
+      if (value !== null && value !== "") {
+        todoData[key] = value;
+      }
     });
     addTodos(todoData);
   };
