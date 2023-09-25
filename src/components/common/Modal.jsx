@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 const Modal = ({ children, onClose, onAdd }) => {
     return (
         <div className="flex w-full h-full fixed inset-0 items-center justify-center z-50">
-            <div className="w-2/4 h-2/4 flex flex-col bg-white p-8 rounded-lg shadow-lg transform scale-105">
-                <div className='flex bg-cyan-200 w-full h-1/6 rounded-t-md justify-between px-5 '>
-                    <span className='flex items-center text-heading-6'>Add TODO</span>
+            <div className="w-auto h-auto flex flex-col bg-white p-4 rounded-lg shadow-lg transform scale-105">
+                <div className='flex bg-cyan-100 w-full h-1/6 rounded-t-md justify-between px-5 '>
+                    <span className='flex items-center text-heading-6'>New</span>
                     <button type="button" className="modal-close text-heading-4" onClick={onClose}>
-                        <span>&times;</span>
+                        <span className='text-red-500'>&times;</span>
                     </button>
                 </div>
-                <div className='flex flex-col item h-full bg-slate-300 w-full rounded-b-md p-5'>
-                    <div className="modal-body h-full rounded-md">
+                <div className='flex flex-col item h-full bg-slate-100 w-full rounded-b-md p-5'>
+                    <div className="modal-body h-auto rounded-md">
                         {children}
                     </div>
                     <div className="mt-4 flex justify-end">
