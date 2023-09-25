@@ -1,5 +1,3 @@
-import { cloneElement, useRef } from 'react';
-import DefaultFooter from './DefaultFooter';
 import DefaultHeader from './DefaultHeader';
 import ContentWrapper from './ContentWrapper';
 

@@ -1,3 +1,5 @@
+const API_BASE_URL = 'http://localhost:8000';
+
 // user url templates
 const usersCreateUrl = () => `api/users/v1/user`;
 const usersReadManyUrl = () =>
@@ -12,21 +14,21 @@ const usersDeleteUrl = (userId, id) =>
   `api/users/v1/user/${userId}`;
 
 // todo url templates
-const todoCreateUrl = userId => `api/todos/v1/${userId}/todo`;
-const todoReadManyUrl = userId =>
-  `api/todos/v1/${userId}/todo`;
+const todoCreateUrl = userId => `/api/v1/todo/${userId}/todo`;
+const todoReadManyUrl = () =>
+  `${API_BASE_URL}/api/v1/todo/items`;
 const todoReadOneUrl = (userId, id) =>
-  `api/todos/v1/${userId}/todo/${id}`;
+  `/api/v1/todo/${userId}/todo/${id}`;
 const todoUpdateUrl = (userId, id) =>
-  `api/todos/v1/${userId}/todo/${id}`;
+  `/api/v1/todo/${userId}/todo/${id}`;
 const todoChangeStatusUrl = (userId, id) =>
-  `api/todos/v1/${userId}/todo/${id}`;
+  `/api/v1/todo/${userId}/todo/${id}`;
 const todoDeleteUrl = (userId, id) =>
-  `api/todos/v1/${userId}/todo/${id}`;
+  `/api/v1/todo/${userId}/todo/${id}`;
 
 const TODO = {
-  CREATE: todoCreateUrl,
   READ_MANY: todoReadManyUrl,
+  CREATE: todoCreateUrl,
   READ_ONE: todoReadOneUrl,
   UPDATE: todoUpdateUrl,
   DELETE: todoDeleteUrl,
@@ -38,7 +40,8 @@ const USER = {
   UPDATE: usersUpdateUrl,
   DELETE: usersDeleteUrl,
   READ_MANY: usersReadManyUrl,
-  READ_ONE: usersReadOneUrl
+  READ_ONE: usersReadOneUrl,
+  CHANGE_STATUS: usersChangeStatusUrl
 };
 
 const URLS = {

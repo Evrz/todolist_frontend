@@ -1,13 +1,11 @@
-import React from 'react'
-
-const ListViewItem = (props) => {
+const ListViewItem = ({ item, className }) => {
     return (
-        <div className={`flex justify-between w-full bg-white m-4 p-3 rounded-md ${props.className}`}>
+        <div className={`flex justify-between w-full bg-white m-4 p-3 rounded-md ${className}`}>
             <div className='rounded-full border border-gray-400 w-16 h-16 flex items-center justify-center'>
-                <img src='/#' className='' />
+                <img src='/assets/icons/inProgress.png' alt='todo icon' className='' />
             </div>
-            <span>
-                {props.item.item}
+            <span className='flex text-heading-6 items-center'>
+                {item.title}
             </span>
             <div className=''>
                 <span className='text-lg font-bold' >
