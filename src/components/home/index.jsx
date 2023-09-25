@@ -22,10 +22,10 @@ const Home = () => {
     }
   ]
   const formElements = [
-    { label: 'Title', id: 'title', name: 'title', type: 'text' },
-    { label: 'Description', id: 'description', name: 'description', type: 'textarea' },
-    { label: 'Completed', id: 'completed', name: 'completed', type: 'checkbox' },
-    { label: 'Due Date', id: 'due_date', name: 'due_date', type: 'date' }
+    { label: 'Title :', id: 'title', name: 'title', type: 'text', placeholder: 'Todo..' },
+    { label: 'Description :', id: 'description', name: 'description', type: 'textarea', placeholder: 'More Details..?' },
+    { label: 'Status :', id: 'completed', name: 'completed', type: 'checkbox' },
+    { label: 'Due Date :', id: 'due_date', name: 'due_date', type: 'date' }
   ];
 
   // states
