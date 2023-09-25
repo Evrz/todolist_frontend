@@ -95,7 +95,7 @@ const Home = () => {
       {isModalOpen && (
         <>
           <div className="fixed inset-0 backdrop-blur-2xl z-40"></div> {/* Add this backdrop */}
-          <Modal onClose={handleCloseModal} onAdd={handleSaveTodo}>
+          <Modal title={"what's next?"} onClose={handleCloseModal} onAdd={handleSaveTodo}>
             <form ref={formRef}>
               {formElements.map((element) => (
                 <div key={element.id} className='h-auto  p-2 flex justify-between'>
