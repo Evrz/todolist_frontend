@@ -22,10 +22,10 @@ const Home = () => {
     }
   ]
   const formElements = [
-    { label: 'Title', id: 'title', name: 'title', type: 'text' },
-    { label: 'Description', id: 'description', name: 'description', type: 'textarea' },
-    { label: 'Completed', id: 'completed', name: 'completed', type: 'checkbox' },
-    { label: 'Due Date', id: 'due_date', name: 'due_date', type: 'date' }
+    { label: 'Title :', id: 'title', name: 'title', type: 'text', placeholder: 'Todo..' },
+    { label: 'Description :', id: 'description', name: 'description', type: 'textarea', placeholder: 'More Details..?' },
+    { label: 'Status :', id: 'completed', name: 'completed', type: 'checkbox' },
+    { label: 'Due Date :', id: 'due_date', name: 'due_date', type: 'date' }
   ];
 
   // states
@@ -78,7 +78,9 @@ const Home = () => {
     const formData = new FormData(formRef.current);
     const todoData = {};
     formData.forEach((value, key) => {
-      todoData[key] = value;
+      if (value !== null && value !== "") {
+        todoData[key] = value;
+      }
     });
     addTodos(todoData);
   };
@@ -93,18 +95,18 @@ const Home = () => {
       {isModalOpen && (
         <>
           <div className="fixed inset-0 backdrop-blur-2xl z-40"></div> {/* Add this backdrop */}
-          <Modal onClose={handleCloseModal} onAdd={handleSaveTodo}>
+          <Modal title={"what's next?"} onClose={handleCloseModal} onAdd={handleSaveTodo}>
             <form ref={formRef}>
               {formElements.map((element) => (
                 <div key={element.id} className='h-auto  p-2 flex justify-between'>
-                  <label htmlFor={element.id} className='flex self-start'>{element.label}: </label>
+                  <label htmlFor={element.id} className='flex self-start'>{element.label} </label>
                   {element.type === 'textarea' ? (
                     <div className='w-[60%]'>
-                      <textarea id={element.id} name={element.name} className='rounded-sm h-auto pb-2 focus:outline-none' />
+                      <textarea id={element.id} name={element.name} placeholder={element?.placeholder} className='rounded-sm h-auto px-2 focus:outline-none' />
                     </div>
                   ) : (
                     <div className='w-[60%]'>
-                      <input type={element.type} id={element.id} name={element.name} className='rounded-sm focus:outline-none' />
+                      <input type={element.type} id={element.id} name={element.name} placeholder={element?.placeholder} className='px-2 rounded-sm focus:outline-none' />
                     </div>
                   )}
                 </div>
@@ -114,7 +116,7 @@ const Home = () => {
         </>
       )
       }
-      <div className='flex h-full justify-evenly'>
+      <div className='flex h-full justify-evenly bg-color-secondary-s80'>
         <div className='w-[10%] flex justify-around m-4 '>
           <SideBar className={'pt-6'} >
             {sideBarItems.map((item, index) => (
@@ -136,7 +138,7 @@ const Home = () => {
             <Button
               buttonType={'button'}
               onClick={handleAddTodo}
-              text="Add ToDo"
+              text="ONE MORE!"
               variant="primary"
               className={'mr-2'}
             />

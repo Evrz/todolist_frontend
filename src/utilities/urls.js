@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:8000';
+// const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://thecipherhead.pythonanywhere.com/';
 
 // user url templates
 const usersCreateUrl = () => `api/users/v1/user`;
